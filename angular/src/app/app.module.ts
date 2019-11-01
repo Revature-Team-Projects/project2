@@ -10,7 +10,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
-  MatButtonModule
+  MatButtonModule,
+  MatTableModule
   } from '@angular/material';
   import {MatToolbarModule} from '@angular/material/toolbar';
 import { RegisterComponent } from './register/register.component';
@@ -20,9 +21,9 @@ import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
 import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 
-
 import { HttpClientModule } from '@angular/common/http';
 import {  MatSidenavModule, MatListModule } from  '@angular/material';
+
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import {  MatSidenavModule, MatListModule } from  '@angular/material';
     MatIconModule,
     MatSelectModule,
     FormsModule,
+    MatTableModule,
     HttpClientModule,
     MatSidenavModule,
     MatListModule,

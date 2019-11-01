@@ -1,25 +1,30 @@
-
-<!-- this toolbat currently routes to dead links. Update the routing as needed -->
-
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-icon-button>
-      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-    </button>
-    <h1>Shiftz</h1>
-    <span class="menu-spacer"></span>
-    <div>
-      <a mat-button [routerLink]="'/accounts'"> Log Out </a>
-      <a mat-button [routerLink]="'/create-account'"> See Your Calendar </a>
-      <a mat-button [routerLink]="'/contacts'"> Upload/Review Your Resume </a>
-      <a mat-button [routerLink]="'/create-contact'"> View The Market Board </a>
-      <a mat-button [routerLink]="'/activities'"> Home </a>
-
-    </div>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-      <span style="font-size: 18px;">Need a Shift? Get a Shift.</span>
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+      <h1>Shiftz</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/login'"> Log Out </a>
+        <a mat-button [routerLink]="'/create-account'"> See Your Calendar </a>
+        <a mat-button [routerLink]="'/create-contact'"> View The Market Board </a>
+        <a mat-button [routerLink]="'/activities'"> Home </a>
+  
+      </div>
     </mat-toolbar-row>
-</mat-toolbar>
-
+  
+    <mat-toolbar-row>
+        <span style="font-size: 18px;">Need a Shift? Get a Shift.</span>
+      </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <div id="img-div" *ngIf="url; else nourl">
+  <img [src]="url" height="300" width="300"> <br/>
+</div>
+<ng-template #nourl>
+        <img src="./empty.jpg" height="300" width="300"> <br/>
+</ng-template>
+  <input id="myFile" name="myFile" type='file' style="display: none;" (change)="onSelectFile($event)">
+  <div id="table-div">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
