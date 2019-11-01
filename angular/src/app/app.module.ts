@@ -10,7 +10,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
-  MatButtonModule
+  MatButtonModule,
+  MatTableModule
   } from '@angular/material';
   import {MatToolbarModule} from '@angular/material/toolbar';
 import { RegisterComponent } from './register/register.component';
@@ -22,6 +23,10 @@ import { RegisterCompanyComponent } from './register-company/register-company.co
 import { CompanyHomepageComponent } from './company-homepage/company-homepage.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
+import { UserHomepageComponent } from './user-homepage/user-homepage.component';
+import { HttpClientModule } from '@angular/common/http';
+import {  MatSidenavModule, MatListModule } from  '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     RegisterComponent,
     ErrorComponent,
     RegisterCompanyComponent,
-    CompanyHomepageComponent
+    CompanyHomepageComponent,
+    UserHomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +53,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     FormsModule,
     MatTableModule,
     MatTabsModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
