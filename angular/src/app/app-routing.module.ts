@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component'
-import {ErrorComponent} from './error/error.component'
+import {RegisterComponent} from './register/register.component';
+import {ErrorComponent} from './error/error.component';
+import {UserHomepageComponent} from './user-homepage/user-homepage.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,9 @@ const routes: Routes = [
   } ,
   {   path: 'register',
       component: RegisterComponent
+  },
+  {
+    path: 'user-home', component: UserHomepageComponent
   },
   {
     path: '**', component: ErrorComponent

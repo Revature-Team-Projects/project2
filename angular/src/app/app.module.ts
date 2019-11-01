@@ -18,13 +18,20 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
+import { UserHomepageComponent } from './user-homepage/user-homepage.component';
+
+
+import { HttpClientModule } from '@angular/common/http';
+import {  MatSidenavModule, MatListModule } from  '@angular/material';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ErrorComponent
+    ErrorComponent,
+    UserHomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,10 @@ import { ErrorComponent } from './error/error.component';
     MatToolbarModule,
     MatIconModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
