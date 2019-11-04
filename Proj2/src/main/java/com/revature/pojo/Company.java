@@ -18,12 +18,13 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @Entity
 @Table(name = "COMPANIES")
 @Component
-public class Company{
+public class Company {
 
 	@Id
 	@Column(name = "COMPANY_NAME")
@@ -254,6 +255,5 @@ public class Company{
 	public static enum AccessLevel {
 		OPEN, AFFILIATED, CLOSED
 	}
-
 
 }

@@ -17,14 +17,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.security.core.Transient;
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "USERS")
@@ -49,7 +44,9 @@ public class User{
 	private String phoneNumber;
 
 	@ManyToMany
-	@JoinTable(name = "COMPANY_USER", joinColumns = @JoinColumn(name = "EMAIL"), inverseJoinColumns = @JoinColumn(name = "COMPANY_NAME"))
+	@JoinTable(name = "COMPANY_USER", joinColumns = @JoinColumn(name = "EMAIL"), 
+	inverseJoinColumns = @JoinColumn(name = "COMPANY_NAME"))
+	@JsonIgnore
 	private Set<Company> parentCompanies = new HashSet<Company>();
 
 	@Column(name = "BIO")
@@ -59,10 +56,12 @@ public class User{
 	private String resume;
 
 	@OneToMany(mappedBy = "postingUser", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Set<Post> postedPost = new HashSet<Post>();
 
 	@ManyToOne
 	@JoinColumn(name = "POST_ID")
+	@JsonIgnore
 	private Post acceptedPost;
 
 	@Column(name = "RATING")

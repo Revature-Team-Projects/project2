@@ -17,7 +17,7 @@
 		mapping="/build-angular-here/**"></mvc:resources>
 
 	  <mvc:default-servlet-handler/>
-	
+	<!--
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
@@ -27,4 +27,5 @@
 			<value>.html</value>
 		</property>
 	</bean>
+	-->
 </beans>
